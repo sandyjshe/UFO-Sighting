@@ -11,14 +11,14 @@ var columns = ["datetime", "city", "state", "country", "shape", "durationMinutes
 
 var populate = (dataInput) => {
 
-  dataInput.forEach(ufo_sightings => {
+  dataInput.forEach(sightings => {
     var row = tbody.append("tr");
-    columns.forEach(column => row.append("td").text(ufo_sightings[column])
+    columns.forEach(column => row.append("td").text(sightings[column])
     )
   });
 }
 
-//Populate table
+//call populate function above to populate table
 populate(tableData);
 
 //filter by user input
