@@ -4,9 +4,9 @@ var tableData = data;
 // YOUR CODE HERE!
 // Variables
 var button = d3.select("#filter-btn");
+var resetbtn = d3.select("#reset-btn");
 var inputField1 = d3.select("#datetime");
 var tbody = d3.select("tbody");
-var resetbtn = d3.select("#reset-btn");
 var columns = ["datetime", "city", "state", "country", "shape", "durationMinutes", "comments"]
 
 var populate = (dataInput) => {
