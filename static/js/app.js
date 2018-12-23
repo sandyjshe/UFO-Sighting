@@ -5,7 +5,6 @@ var tableData = data;
 // Variables
 var button = d3.select("#filter-btn");
 var inputField1 = d3.select("#datetime");
-var inputField2 = d3.select("#city");
 var tbody = d3.select("tbody");
 var resetbtn = d3.select("#reset-btn");
 var columns = ["datetime", "city", "state", "country", "shape", "durationMinutes", "comments"]
@@ -22,14 +21,14 @@ var populate = (dataInput) => {
 //Populate table
 populate(tableData);
 
-// Filter by attribute
+//filter by user input
 button.on("click", () => {
   d3.event.preventDefault();
   var inputDate = inputField1.property("value").trim();
   var filterData = tableData.filter(tableData => tableData.datetime === inputDate);
   console.log(filterData)
 
-  // Add filtered sighting to table
+  //add filtered sighting to table
   tbody.html("");
 
   let response = {
@@ -37,14 +36,16 @@ button.on("click", () => {
   }
 
   if (response.filterData.length !== 0) {
+    //populate table with filtered data when found
     populate(filterData);
   }
-    
+    //return no result found message when nothing found
     else {
       tbody.append("tr").append("td").text("No results found!"); 
     }
 })
 
+//reset table button
 resetbtn.on("click", () => {
   tbody.html("");
   populate(data)
