@@ -2,7 +2,7 @@
 
 ## UFO Sighting
 
-Visit https://sandyjshe.github.io/bootcamphw11/
+Visit https://sandyjshe.github.io/UFO-Sighting/
 
 ## Background
 
